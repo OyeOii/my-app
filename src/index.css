@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +10,31 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+html,
+body,
+#root
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background:  /* ff 3.6+ */
+    -moz-radial-gradient(circle at 88% 43%, rgba(220, 119, 220, 1) 0%, rgba(61, 220, 255, 1) 100%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 88% 43%, rgba(220, 119, 220, 1) 0%, rgba(61, 220, 255, 1) 100%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 88% 43%, rgb(226, 134, 226) 0%, rgba(61, 220, 255, 1) 100%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 88% 43%, rgba(220, 119, 220, 1) 0%, rgba(61, 220, 255, 1) 100%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 88% 43%, rgba(220, 119, 220, 1) 0%, rgba(61, 220, 255, 1) 100%);
 }

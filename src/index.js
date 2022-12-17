@@ -1,17 +1,49 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Canvas } from '@react-three/fiber';
+import Experience from './Experience.js';
+import { CubeCamera } from '@react-three/drei';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+function Sphere() {
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(
+      window.innerWidth,
+      window.innerHeight
+  );
+  document.body.innerHTML = '';
+  document.body.appendChild( renderer.domElement );
+
+  return(
+      <mesh visible position = {[ 0, 0, 0 ]} rotation = {[ 0, 0, 0 ]} castShadow>
+          <directionalLight intensity={ 0.2 } />
+          <shpereGeometry attach = " geometry " args = {[ 2, 32, 32 ]} />
+          <meshBasicMaterial
+          attach = "material"
+          envMap = { CubeCamera.renderTarget.texture}
+          color = ""
+          roughness = { 0.1 }
+          metalness = { 1 } />
+      </mesh>
+  )
+}
+
+const root = ReactDOM.creat(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <React.StrictMode>
+        <Canvas
+        shadows
+        camera={ {
+        fov: 50,
+        near: 1,
+        far: 100,
+        position: [ 14, 7, 1 ]
+        
+    } }
+>
+    
+    <Experience />
+</Canvas>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    </React.StrictMode>
+)
