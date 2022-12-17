@@ -1,5 +1,5 @@
 import { useFrame } from "@react-three/fiber"
-import state from '../state.js'
+import state from '../state.js.js'
 import * as THREE from 'THREE'
 
 const CameraControl = ({ }) => {
